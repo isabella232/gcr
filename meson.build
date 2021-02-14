@@ -65,6 +65,11 @@ if libsystemd.found() and systemd.found()
   with_systemd = true
 endif
 
+profile_dir = get_option('profile_dir')
+if profile_dir == ''
+  profile_dir = gcr_prefix / get_option('sysconfdir') / 'profile.d'
+endif
+
 if get_option('gtk')
   gtk_min_version = '3.22'
   gtk_dep = dependency('gtk+-3.0', version: '>=' + gtk_min_version)

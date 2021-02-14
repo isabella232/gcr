@@ -28,3 +28,8 @@ option('systemd',
   value: 'auto',
   description: 'Use systemd socket activation for server programs'
 )
+option('profile_dir',
+  type: 'string',
+  value: '',
+  description: 'Path to profile.d files, default is SYSCONFDIR/profile.d'
+)

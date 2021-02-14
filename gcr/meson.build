@@ -273,6 +273,9 @@ if get_option('ssh_agent')
 		 install_dir: systemduserunitdir)
   endif
 
+  install_data('gcr-ssh-agent.sh',
+	       install_dir: profile_dir)
+
   gcr_ssh_agent_test_cflags = [
     '-DSRCDIR="@0@"'.format(source_root),
     '-D_GCR_TEST_SSH_ASKPASS_PATH="@0@"'.format(gcr_ssh_askpass.full_path()),
